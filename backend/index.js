@@ -11,14 +11,16 @@ app.use(express.json());
 app.use(cors());
 app.use("/api", flighrouter);
 
-app.get("/test", (req, res) => {
-  try {
-    res.status(200).json({ message: "working" });
-  } catch (error) {
-    console.log(error);
-  }
+// app.get("/test", (req, res) => {
+//   try {
+//     res.status(200).json({ message: "working" });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
+app.get("/", function (request, response) {
+  response.send("🙋‍♂️, 🌏 🎊✨🤩");
 });
-
 app.listen(port, () => {
   try {
     console.log("App listening on the port >>", port);
